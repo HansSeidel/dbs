@@ -46,12 +46,12 @@ ALTER TABLE person ADD PRIMARY KEY(personID_pk);
 ALTER TABLE person ADD FOREIGN KEY(anschriftID_fk) REFERENCES anschrift(anschriftID_pk) ON DELETE SET NULL;
 ALTER TABLE spieler ADD FOREIGN KEY(personID_fk) REFERENCES person(personID_pk) ON DELETE SET NULL
 										ADD PRIMARY KEY(personID_fk);
-ALTER TABLE trainer ADD FOREIGN KEY(personID_fk) REFERENCES person(personID_pk) ON DELETE SET NULL;
+ALTER TABLE trainer ADD FOREIGN KEY(personID_fk) REFERENCES person(personID_pk) ON DELETE SET NULL
 										ADD PRIMARY KEY(personID_fk);
-ALTER TABLE schiedsrichter ADD FOREIGN KEY(personID_fk) REFERENCES person(personID_pk) ON DELETE SET NULL;
+ALTER TABLE schiedsrichter ADD FOREIGN KEY(personID_fk) REFERENCES person(personID_pk) ON DELETE SET NULL
 										ADD PRIMARY KEY(personID_fk);
 ALTER TABLE mitarbeiter ADD FOREIGN KEY(personID_fk) REFERENCES person(personID_pk) ON DELETE SET NULL
-										ADD PRIMARY KEY(personID_fk);;
+										ADD PRIMARY KEY(personID_fk);
 ----------------CONSTRAINTS-----------------
 ALTER TABLE person MODIFY (vorname NOT NULL, nachname NOT NULL, geschlecht CHECK(geschlecht IN ('M','F','D')));
 ALTER TABLE spieler MODIFY (spielerID NOT NULL, eintrittsdatum NOT NULL, status CHECK(status IN ('KADER','RESER','NOTKA')));
