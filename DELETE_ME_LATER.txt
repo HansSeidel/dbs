@@ -1,1 +1,0 @@
-This file is only, so i can push the empty directories.
