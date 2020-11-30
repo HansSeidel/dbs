@@ -76,6 +76,7 @@ CREATE TABLE "MANNSCHAFT"
   
 CREATE TABLE SPIELER (
 	personID Number,
+	mannschaftid Number,
 	status CHAR(5),
 	eintrittsdatum Date,
 	austrittsdatum Date
@@ -96,6 +97,7 @@ CREATE TABLE mitarbeiter_vorgesetzter (
 );
 CREATE TABLE mitarbeiter (
 	personID Number,
+	vereinID Number,
 	funktion Varchar(50),
 	eintrittsdatum Date,
 	austrittsdatum Date
@@ -199,6 +201,7 @@ CREATE TABLE person (
 --  Spieler
 --------------------------------------------------------
   ALTER TABLE "SPIELER" MODIFY ("PERSONID" NOT NULL ENABLE);
+  ALTER TABLE "SPIELER" MODIFY ("MANNSCHAFTID" NOT NULL ENABLE);
   ALTER TABLE "SPIELER" MODIFY ("EINTRITTSDATUM" NOT NULL ENABLE);
   ALTER TABLE "SPIELER" ADD PRIMARY KEY ("PERSONID") ENABLE;
 --------------------------------------------------------
@@ -223,6 +226,7 @@ CREATE TABLE person (
 --  mitarbeiter
 --------------------------------------------------------
   ALTER TABLE "MITARBEITER" MODIFY ("PERSONID" NOT NULL ENABLE);
+  ALTER TABLE "MITARBEITER" MODIFY ("VEREINID" NOT NULL ENABLE);
   ALTER TABLE "MITARBEITER" MODIFY ("EINTRITTSDATUM" NOT NULL ENABLE);
   ALTER TABLE "MITARBEITER" ADD PRIMARY KEY ("PERSONID") ENABLE;
 --------------------------------------------------------
@@ -303,14 +307,19 @@ CREATE TABLE person (
 --------------------------------------------------------
  ALTER TABLE "SPIELER" ADD FOREIGN KEY ("PERSONID")
 	  REFERENCES "PERSON" ("PERSONID") ENABLE;
+ ALTER TABLE "SPIELER" ADD FOREIGN KEY ("MANNSCHAFTID")
+	  REFERENCES "MANNSCHAFT" ("MANNSCHAFTID") ENABLE;
  ALTER TABLE "TRAINER" ADD FOREIGN KEY ("PERSONID")
 	  REFERENCES "PERSON" ("PERSONID") ENABLE;
  ALTER TABLE "SCHIEDSRICHTER" ADD FOREIGN KEY ("PERSONID")
 	  REFERENCES "PERSON" ("PERSONID") ENABLE;
 
 --------------------------------------------------------
---  mitarbeiter_vorgesetzter
+--  mitarbeiter, mitarbeiter_vorgesetzter
 --------------------------------------------------------
+ALTER TABLE "MITARBEITER" ADD FOREIGN KEY ("VEREINID")
+    REFERENCES "VEREIN" ("VEREINID") ENABLE;
+
  ALTER TABLE "MITARBEITER_VORGESETZTER" ADD FOREIGN KEY ("PERSONID")
 	  REFERENCES "MITARBEITER" ("PERSONID") ENABLE;
  ALTER TABLE "MITARBEITER_VORGESETZTER" ADD FOREIGN KEY ("VORGESETZTERID")
