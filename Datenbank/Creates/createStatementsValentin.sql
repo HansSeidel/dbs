@@ -6,39 +6,7 @@
 /**
 /*************************************/
 
-CREATE TABLE person (
-	personID_pk Number,
-	anschriftID_fk Number,
-	vorname Varchar(50),
-	nachname Varchar(50),
-	geschlecht Char(1)
-);
-CREATE TABLE spieler (
-	spielerID Number,
-	personID_fk Number,
-	status CHAR(5),
-	eintrittsdatum Date,
-	austrittsdatum Date
-);
-CREATE TABLE trainer (
-	trainerID Number,
-	personID_fk Number,
-	eintrittsdatum Date,
-	austrittsdatum Date
-);
-CREATE TABLE schiedsrichter (
-	schiedsrichterID Number,
-	personID_fk Number,
-	eintrittsdatum Date,
-	austrittsdatum Date
-);
-CREATE TABLE mitarbeiter (
-	mitarbeiterID Number,
-	personID_fk Number,
-	funktion Varchar(50),
-	eintrittsdatum Date,
-	austrittsdatum Date
-);
+
 
 ----------PRIMARY KEY STATEMENTS-----------
 ALTER TABLE person ADD PRIMARY KEY(personID_pk);
