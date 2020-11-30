@@ -5,7 +5,7 @@ Ort(PLZ, LandID, Bezeichnung);
 Anschrift(AnschiftID, PLZ, Strasse, Hausnummer);
 Verein(VereinID, AnschriftID, Name);
 Liga(LigaID, Datum_begonnen, Datum_geendet, Name, Altersgruppe, Geschlechts_Gruppe);
-Mannschaft_Match(MatchId, MannschaftId, Spielt_Als);
+Mannschaft_Match(Heimmannschaft, GastmannschaftID MannschaftID); 
 Mannschaft_Trainer(MannschaftID, TrainerID);
 Match_Schiedrichter(MannschaftID, SchiedsrichterID);
 Match(MatchID, AnschriftID, LigaID, Datum, Begonnen_um, Geendet_um, Tore_Stand);
