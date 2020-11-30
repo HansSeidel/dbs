@@ -1,0 +1,19 @@
+ RelationenModelle:
+
+Land(LandID, Kennzeichen, Bezeichnung);
+Ort(PLZ, LandID, Bezeichnung);
+Anschrift(AnschiftID, PLZ, Strasse, Hausnummer);
+Verein(VereinID, AnschriftID, Name);
+Liga(LigaID, Datum_begonnen, Datum_geendet, Name, Altersgruppe, Geschlechts_Gruppe);
+Mannschaft_Match(MatchId, MannschaftId, Spielt_Als);
+Mannschaft_Trainer(MannschaftID, TrainerID);
+Match_Schiedrichter(MannschaftID, SchiedsrichterID);
+Match(MatchID, AnschriftID, LigaID, Datum, Begonnen_um, Geendet_um, Tore_Stand);
+Mannschaft(MannschaftID, VereinID, Name, Altersgruppe);
+Spieler(PersonID, status, eintrittsdatum, austrittsdatum);
+Trainer(PersonID, eintrittsdatum, austrittsdatum);
+Schiedsrichter(PersonID, eintrittsdatum, austrittsdatum);
+Mitarbeiter_Vorgesetzter(PersonID, VorgesetzterID);
+Mitarbeiter(PersonID, funktion, eintrittsdatum, austrittsdatum);
+Schiedsrichter(PersonID, eintrittsdatum, austrittsdatum);
+Schiedsrichter(PersonID, anschriftID, vorname, nachname, geschlecht);

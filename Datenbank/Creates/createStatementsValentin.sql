@@ -6,6 +6,7 @@
 /**
 /*************************************/
 
+<<<<<<< HEAD
 CREATE TABLE person (
 	personID_pk Number,
 	anschriftID_fk Number,
@@ -40,6 +41,9 @@ CREATE TABLE mitarbeiter (
 	eintrittsdatum Date,
 	austrittsdatum Date
 );
+=======
+
+>>>>>>> tmp
 
 ----------PRIMARY KEY STATEMENTS-----------
 ALTER TABLE person ADD PRIMARY KEY(personID_pk);
