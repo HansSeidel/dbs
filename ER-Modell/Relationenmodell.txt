@@ -16,4 +16,4 @@ Schiedsrichter(PersonID, eintrittsdatum, austrittsdatum);
 Mitarbeiter_Vorgesetzter(PersonID, VorgesetzterID);
 Mitarbeiter(PersonID, funktion, eintrittsdatum, austrittsdatum);
 Schiedsrichter(PersonID, eintrittsdatum, austrittsdatum);
-Schiedsrichter(PersonID, anschriftID, vorname, nachname, geschlecht);
+Person(PersonID, AnschriftID, vorname, nachname, geburtsdatum, geschlecht);
