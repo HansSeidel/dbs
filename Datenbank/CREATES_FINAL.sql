@@ -107,6 +107,7 @@ CREATE TABLE person (
 	anschriftID Number,
 	vorname Varchar(50),
 	nachname Varchar(50),
+	geburtsdatum Date,
 	geschlecht Char(1)
 );
 
