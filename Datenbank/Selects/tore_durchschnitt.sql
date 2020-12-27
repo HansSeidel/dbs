@@ -6,6 +6,7 @@
   Es soll nach den besten Mannschaften absteigend geordnet werden. 
 
 **/
+SELECT * FROM all_tables;
 SELECT * FROM Mannschaft;
 SELECT * FROM MATCH ORDER BY Matchid;
 SELECT * FROM MANNSCHAFT_MATCH;
