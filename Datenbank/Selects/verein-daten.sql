@@ -2,13 +2,9 @@
 Developer: Lucian-Valentin Caraba
 status: in Arbeit
 ************************************************************/
-
-
-
-select vr.vereinid, vr.name, an.plz, an.strasse, an.hausnummer, /*count(ms.mannschaftid) as mannschaftenanzahl,*/ count(ma.personid) as mitarbeiteranzahl
+select vr.vereinid, vr.name, an.plz, an.strasse, an.hausnummer, count(ms.mannschaftid) as mannschaftenanzahl
 from verein vr join anschrift an on vr.anschriftid = an.anschriftid
-							 --join mannschaft ms on vr.vereinid = ms.vereinid
-							 join mitarbeiter ma on vr.vereinid = ma.vereinid						 
+							 join mannschaft ms on vr.vereinid = ms.vereinid
 group by vr.vereinid, vr.name, an.plz, an.strasse, an.hausnummer;
 
 select mannschaftid, count(personid) as spieleranzahl 
